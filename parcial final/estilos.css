@@ -91,7 +91,9 @@ table{
     border-radius:20px;
     margin-bottom: 10px;
 }
-
+thead{
+    background-color: rgb(77, 14, 14);
+}
 th, td{
     border: 1px solid white ;
     width:100px;
@@ -100,6 +102,7 @@ th, td{
     padding:0 8px;
     color: white;
 }
+
 
 
 #spinner {

@@ -5,10 +5,11 @@ import {crearTabla} from './tabla.js';
 import {actualizarTabla} from './tabla.js';
 
 const $seccionTabla= document.getElementById("selTabla");
-let anuncios= JSON.parse(localStorage.getItem('Heroes')) || Heroes;
+let listaHeroes= JSON.parse(localStorage.getItem('Heroes')) || Heroes;
 let flag=true;
 let indice=0;
-localStorage.setItem('Heroes', JSON.stringify(anuncios));
+localStorage.setItem('Heroes', JSON.stringify(listaHeroes
+));
 //Seteo addevent para que guarde el manejador 
 
 $seccionTabla.appendChild(crearTabla(JSON.parse(localStorage.getItem('Heroes'))));
@@ -49,7 +50,8 @@ window.addEventListener("click", (e) => {
       
       const id = e.target.parentElement.dataset.id;
       indice= id;
-      const anuncioSeleccionado = anuncios.find((personaje) => personaje.id==id);
+      const anuncioSeleccionado = listaHeroes
+    .find((personaje) => personaje.id==id);
       CargarDatosSeleccionado(anuncioSeleccionado);
   }
 });
@@ -86,11 +88,14 @@ function GuardarAnuncio() {
 
 }
 
-//Agrego el anuncio al anuncios y actualizo el localstorage y la tabla
+//Agrego el anuncio al listaHeroes y actualizo el localstorage y la tabla
 function AgregarAnuncio(Anuncio) {
-  anuncios.push(Anuncio);
-  console.log(anuncios);
-  actualizarTabla($seccionTabla,anuncios); 
+  listaHeroes
+.push(Anuncio);
+  console.log(listaHeroes
+  );
+  actualizarTabla($seccionTabla,listaHeroes
+  ); 
 }
 
 //Carga los datos de la tabla al formulario
@@ -132,11 +137,14 @@ function CargarDatosSeleccionado(anuncioSeleccionado){
 function generarId()
 {
     let id;
-    for(var i = 0; i < anuncios.length; i++)
+    for(var i = 0; i < listaHeroes
+    .length; i++)
     {
-        if(i == (anuncios.length - 1))
+        if(i == (listaHeroes
+        .length - 1))
         {
-            id = anuncios[i].id;
+            id = listaHeroes
+          [i].id;
         }
     }
     return id + 1;
@@ -145,14 +153,16 @@ function generarId()
 //Limpia el formulario
 function LimpiarFormulario(id) {
   flag=true;
-  localStorage.setItem('Heroes', JSON.stringify(anuncios));
+  localStorage.setItem('Heroes', JSON.stringify(listaHeroes
+  ));
   document.getElementById('txtTitulo').value = "";
   document.getElementById('txtDescripcion').value = "";
 }
 
 //Modifica el anuncio seleccionado en la tabla
 function ModificarAnuncio(formulario) {
-    anuncios.find((personaje) => {
+    listaHeroes
+  .find((personaje) => {
       if(personaje.id===parseInt(indice) ){
         personaje.nombre= formulario.txtTitulo.value;
         personaje.alias= formulario.txtDescripcion.value;
@@ -178,8 +188,11 @@ function ModificarAnuncio(formulario) {
       }
     }
     )
-    actualizarTabla($seccionTabla,anuncios);
-    LimpiarFormulario(anuncios[anuncios.length - 1].id + 1);
+    actualizarTabla($seccionTabla,listaHeroes
+    );
+    LimpiarFormulario(listaHeroes
+    [listaHeroes
+    .length - 1].id + 1);
     
     formulario.btnGuardar.value="Guardar";
     formulario.btnBorrar.disabled=true;
@@ -189,12 +202,14 @@ function ModificarAnuncio(formulario) {
 function BorrarAnuncio(anuncioBorrar, formulario){
   let anunciosNuevo= [];
   flag=true;
-  anuncios.forEach((personaje) => {
+  listaHeroes
+.forEach((personaje) => {
       if(personaje.id!==anuncioBorrar.id){
         anunciosNuevo.push(personaje);
       }
     });
-  anuncios= anunciosNuevo;
+  listaHeroes
+= anunciosNuevo;
   actualizarTabla($seccionTabla,anunciosNuevo);
   console.log(anunciosNuevo);
   LimpiarFormulario(anunciosNuevo[anunciosNuevo.length - 1].id + 1)
