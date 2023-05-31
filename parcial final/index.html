@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet" href="estilos.css">
+    <script src="script.js" type="module" defer></script>
+    <title>Primer Parcial</title>
+</head>
+<body>
+    <header>
+       <img src="logo.png" id="logo"> 
+       <nav id="nav">
+        <ul>
+            <li><a href="index.html" onclick="seleccionar()">Home</a></li>
+            <li><a href="principal.html" onclick="seleccionar()">Personajes</a></li>
+            <li><a href="#" onclick="seleccionar()">Blog</a></li>
+            <li><a href="#" onclick="seleccionar()">Contacto</a></li>
+        </ul>
+    </nav>
+
+    </header>
+    <form id="formularioAlta">  
+        <fieldset id="FieldAlta">
+            <legend>
+                <label>Informacion del superheroe</label>
+            </legend>
+            <label >Nombre</label>
+            <input type="text" id="txtTitulo" placeholder="  Nombre">
+            
+            <fieldset id="FieldTransaccion">
+                <legend id="legendaTrans" >Editorial</legend>
+                <label >DC</label>
+                <input type="radio" name="transaccion" value="DC" checked id="rTransaccionVenta">
+                <label >Marvel</label>
+                <input type="radio" name="transaccion" value="Marvel"  id="rTransaccionAlquiler">
+            </fieldset>
+
+            <label >Alias</label>
+            <input type="text" id="txtDescripcion" placeholder="  Alias">
+
+            <label >Arma</label>
+            <select name="Arma" id="arma"></select>
+
+            <label >Fuerza</label>
+            <input type="range" id="fuerza"  min="0" max="100" step="1">
+        </fieldset>
+    <div id="botones">
+       
+        <input type="submit" id="btnGuardar" value="Guardar"  >
+   
+        <input type="button" id="btnBorrar" value="Borrar" disabled="true">
+        <input type="button" id="btnCancelar" value="Cancelar" disabled="true">
+    </div>
+    </form>
+
+        <div id="spinner" ></div>
+        <section id="selTabla" hidden=true></section>
+   <footer>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html" onclick="seleccionar()">Home</a></li>
+            <li><a href="principal.html" onclick="seleccionar()">Personajes</a></li>
+            <li><a href="#" onclick="seleccionar()">Blog</a></li>
+            <li><a href="#" onclick="seleccionar()">Contacto</a></li>
+        </ul>
+    </nav>
+   </footer>
+</body>
+</html>

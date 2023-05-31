@@ -1,0 +1,135 @@
+
+label{
+    display: flex;
+    flex-direction: columns;
+    margin-bottom: 10px;
+    color: white;
+}
+#logo {
+    width: 100px;
+    height: 100px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    margin-right: 0px;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-color: white ;
+}
+
+ #txtId,#txtTitulo,#txtDescripcion,#txtCantBaños,#txtCantAutos,#txtDormitorios{
+    margin-bottom: 10px;
+    border-radius: 8px;
+} 
+
+#FieldTransaccion{
+    color: white;
+    border: none ;
+    padding: 0;
+}
+
+#legendaTrans{
+    margin-bottom: 10px;
+}
+
+#formularioAlta, #selTabla{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    background-color: #242424;
+}
+
+#FieldAlta{
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-image: url("fondo.jpg");
+    
+}
+
+footer{
+    background-color: white;
+    height: 100px;
+}
+
+h1{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+
+
+table{
+    border-collapse: collapse ;
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+#btnGuardar,#btnMod,#btnBorrar, #btnCancelar{
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+    text-align:center;
+    font-weight: 600;
+    color:white;
+    padding-top:5px;
+    padding-bottom:5px;
+    background-color:#242434;
+    border-color: #d8d8d8;
+    border-width: 1px;
+    border-style: solid;
+    border-radius:20px;
+    margin-bottom: 10px;
+}
+
+th, td{
+    border: 1px solid white ;
+    width:100px;
+    height:28px;
+    line-height:28px;
+    padding:0 8px;
+    color: white;
+}
+
+
+#spinner {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #242434;
+    animation: spin 2s linear infinite;
+    display: none;
+  }
+  
+@keyframes spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+#selTabla{
+    display: none;
+    text-align: center;
+}
+
+.Fichas{
+    background-color: rgb(110, 21, 21) ;
+    width: 200ox;
+    margin-bottom: 10px;
+}
+
